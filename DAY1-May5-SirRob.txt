@@ -3,9 +3,9 @@ TASK1: COLLAPSED BACKBONE: BASIC LAYER3 CONFIGURATION.
 config t
    hostname COREtaas-~~
    enable secret pass
-   service password-encryption
+   service password-encryption 
    no logging console
-   no ip domain-lookup
+   no ip domain-lookup 
    line console 0
 	logging synchoronous
      password pass
@@ -206,7 +206,8 @@ config t
    
 !!!CUCM ANALOG PHONES CONFIG
 configure terminal
-dial-peer voice 1 pots
+
+dial-peer voice 1 pots !POTS=Plain Old Telephony Service
    destination-pattern ~~00
    port 0/0/0
 dial-peer voice 2 pots
@@ -219,6 +220,13 @@ dial-peer voice 4 pots
    destination-pattern ~~03
    port 0/0/3
 end
+
+voice-port 0/0/0	!select port no.
+cptone gb			!set country tone
+signal loopstart
+comfort-noise
+!!!TEST ANALOG PHONES IF ONLY 1 ANALOG PHONE
+csim start 1234
 
 !!IP telephony or Six Digit Salary.
 config t   
@@ -672,6 +680,7 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
 
