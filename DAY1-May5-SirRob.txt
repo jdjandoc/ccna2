@@ -6,8 +6,8 @@ config t
    service password-encryption
    no logging console
    no ip domain-lookup
-	logging synchoronous
    line console 0
+	logging synchoronous
      password pass
      login
      exec-timeout 0 0
@@ -672,5 +672,6 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
