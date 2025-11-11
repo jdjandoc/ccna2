@@ -294,7 +294,7 @@ exit
 !OUTGOING CALL FROM CUCM TO OTHER CUCM.
 configure terminal
  dial-peer voice 11 Voip
- destination-pattern 11..
+ destination-pattern 11..		!start any number that starts with 11xx
  session target ipv4:10.11.100.8
  codec g711ULAW
   !dial-peer voice 12 Voip
@@ -680,6 +680,7 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
 
