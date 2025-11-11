@@ -230,12 +230,12 @@ csim start 1234
 
 !!IP telephony or Six Digit Salary.
 config t   
-no telephony-service
-telephony-service
+no telephony-service											!stop service
+telephony-service												!start service
    no auto assign
    no auto-reg-ephone
-   max-ephones 5
-   max-dn 20
+   max-ephones 5												!
+   max-dn 20													!maximum dial numbers
    ip source-address 10.~~.100.8 port 2000
    create cnf-files
 ephone-dn 1
@@ -261,7 +261,7 @@ ephone-dn 10
 Ephone 1
   Mac-address cafe.face.baba
   type 8945
-  button 1:8 2:7 3:6 4:5
+  button 1:8 2:7 3:6 4:5			!sets buttons 1-4 to created ephone-dn numbers to cisco ipphone
   restart
 Ephone 2
   Mac-address fafa.caca.baba
@@ -505,7 +505,7 @@ dial-peer voice 69 voip
  destination-pattern ~~69
  session target ipv4:10.~~.100.8
  incoming called-number ~~69
- dtmf-relay h245-alphanumeric
+ dtmf-relay h245-alphanumeric				!enables text sending
  codec g711ulaw
  no vad
 !
@@ -680,6 +680,7 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
 
