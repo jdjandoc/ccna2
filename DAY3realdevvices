@@ -44,7 +44,7 @@ task4: CONFIGURING eigrp FOR ALL switches,cms
 @cm:
 config t
 router eigrp M
- no auto-summary
+ no auto-summary                                        !sends data without waiting other routes
  network 10.m.100.0 0.0.0.255
 @CoreBAba:
 config t
