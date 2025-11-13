@@ -234,7 +234,7 @@ no telephony-service											!stop service
 telephony-service												!start service
    no auto assign
    no auto-reg-ephone
-   max-ephones 5												!
+   max-ephones 5												
    max-dn 20													!maximum dial numbers
    ip source-address 10.~~.100.8 port 2000
    create cnf-files
@@ -680,6 +680,7 @@ exit
           
 sip-ua
 sip-server ipv4:192.168.k.1
+
 
 
 
